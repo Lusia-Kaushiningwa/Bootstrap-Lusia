@@ -1,0 +1,24 @@
+html{
+  scroll-behavior: smooth;
+}
+
+#backToTop{
+  display: none;
+}
+
+section{
+        padding: 60px 0;
+         }
+
+.carousel-indicators [data-bs-target]{
+  background-color: #4504c7;
+}
+
+.carousel-indicators .active{
+  background-color: #0d6efd;
+}
+
+.carousel-item img{
+  max-width: 400px;
+  margin: auto;
+}
