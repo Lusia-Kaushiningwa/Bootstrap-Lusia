@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <title>Lusia's Bootstrap</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body id="top">
@@ -28,17 +28,18 @@
       <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#Home">About Me</a>
+            <a class="nav-link" href="#Home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#projects">projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact">Get In Touch</a>
-          </li>
-            <li class="nav-item">
             <a class="nav-link" href="#Skills">My skills</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contactForm">Get In Touch</a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -52,11 +53,7 @@
             <div class="display-5 text-muted">Full Stack Software Developer</div>
           </h1>
           <p class="lead my-4 text-muted">I turn ideas into interactive experiences and problems into clean, working solutions. If you're looking for someone who codes with creativity, precision, and purpose — you're in the right place. The next great project could start with just one click.</p>
-          <a href="#contact" class="btn btn-secondary btn-lg">Contact me</a>
-          <!-- open sidebar / offcanvas -->
-          <a href="#projects" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
-            Explore my other completed projects
-          </a>
+          <a href="#contactForm" class="btn btn-secondary btn-lg">Contact me</a>
         </div>
 <div class="col-md-5 text-center d-none d-md-block">
   <!-- tooltip -->
@@ -153,8 +150,81 @@
 
 </div>
 </section>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>    
-<a href="#top" id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4">↑ Top </a>
+  <!-- contact form -->
+  <!-- form-control, form-label, form-select, input-group, input-group-text -->
+  <form id="contactForm" class="needs-validation" novalidate>
+    <div class="container-lg"> 
+      <div class="text-center">
+        <h2>Get in Touch</h2>
+        <p class="lead">Questions to ask? Fill out the form to contact me directly...</p>
+      </div>
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-6">
+          <form>
+            <label for="email" class="form-label">Email address:</label>
+            <div class="input-group mb-4">
+              <span class="input-group-text">
+                <i class="bi bi-envelope-fill text-secondary"></i>
+              </span>
+              <input type="email" id="email" class="form-control" placeholder="e.g. yourEmail@example.com" required />
+              <!-- tooltip -->
+              <span class="input-group-text">
+                <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to.">
+                  <i class="bi bi-question-circle text-muted"></i>
+                </span>
+              </span>
+            </div>
+            <label for="name" class="form-label">Name:</label>
+            <div class="mb-4 input-group">
+              <span class="input-group-text">
+                <i class="bi bi-person-fill text-secondary"></i>
+              </span>
+              <input type="text" id="name" class="form-control" placeholder="e.g. YourName" required/>
+              <!-- tooltip -->
+              <span class="input-group-text">
+                <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                  <i class="bi bi-question-circle text-muted"></i>
+                </span>
+              </span>
+            </div>
+            <label for="subject" class="form-label">What is your question about?</label>
+            <div class="mb-4 input-group">
+              <span class="input-group-text">
+                <i class="bi bi-chat-right-dots-fill text-secondary"></i>
+              </span>
+              <select class="form-select" id="subject">
+                <option value="pricing" selected>My skills</option>
+                <option value="content">Projects done</option>
+                <option value="other">Other query</option>
+              </select>
+            </div>
+            <div class="mb-4 mt-5 form-floating">
+              <textarea class="form-control" id="query" style="height: 140px" placeholder="query" required></textarea>
+              <label for="query">Your query...</label>
+            </div>
+            <div class="mb-4 text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Success message -->
+<div id="successMessage" class="alert alert-success mt-3 d-none">
+✔ Your message was successfully submitted!
+</div>
+
+<!-- Back to top button -->
+<a href="#top" id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4" style="display:none;">
+↑ Top
+</a>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Your JS -->
 <script src="Js/javascript.js"></script>
+
 </body>
 </html>

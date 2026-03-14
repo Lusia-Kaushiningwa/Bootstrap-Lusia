@@ -10,15 +10,20 @@ section{
         padding: 60px 0;
          }
 
-.carousel-indicators [data-bs-target]{
-  background-color: #4504c7;
+.carousel-item::before{
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.4);
 }
-
-.carousel-indicators .active{
-  background-color: #0d6efd;
+.carousel-item{
+  text-align:center;
 }
 
 .carousel-item img{
-  max-width: 400px;
-  margin: auto;
+  max-width:400px;
+  margin:auto;
 }
