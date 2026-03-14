@@ -10,7 +10,7 @@
 <body id="top">
 
   <!-- navbar -->
-  <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+ <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white shadow-sm">
     <div class="container-xxl">
       <!-- navbar brand / title -->
       <a class="navbar-brand" href="#intro">
@@ -58,10 +58,8 @@
 <div class="col-md-5 text-center d-none d-md-block">
   <!-- tooltip -->
   <span class="tt">
-    <img src="/img/Lusia.png" 
-         class="img-fluid rounded-circle border border-4 border-primary" 
-         style="width: 250px;" alt="Developer" data-bs-placement="bottom" title="Full stack developer picture">
-      </span>
+    <img src="/img/Lusia.png" class="img-fluid rounded-circle border border-4 border-primary" style="width: 250px;" alt="Developer" data-bs-placement="bottom" title="Full stack developer picture">
+  </span>
       </div>
       </div>
     </div>
@@ -152,68 +150,83 @@
 </section>
   <!-- contact form -->
   <!-- form-control, form-label, form-select, input-group, input-group-text -->
-  <form id="contactForm" class="needs-validation" novalidate>
-    <div class="container-lg"> 
-      <div class="text-center">
-        <h2>Get in Touch</h2>
-        <p class="lead">Questions to ask? Fill out the form to contact me directly...</p>
+  <section>
+    
+<div id="successPopup" class="alert alert-success text-center position-fixed top-0 start-50 translate-middle-x mt-4 d-none" style="z-index:9999; width:300px;">
+✔ Message sent successfully!
+</div>
+
+<form id="contactForm" class="needs-validation" novalidate>
+
+<div class="container-lg"> 
+  <div class="text-center">
+    <h2>Get in Touch</h2>
+    <p class="lead">Questions to ask? Fill out the form to contact me directly...</p>
+  </div>
+
+  <div class="row justify-content-center my-5">
+    <div class="col-lg-6">
+
+      <label for="email" class="form-label">Email address:</label>
+      <div class="input-group mb-4">
+        <span class="input-group-text">
+          <i class="bi bi-envelope-fill text-secondary"></i>
+        </span>
+
+        <input type="email" id="email" class="form-control"
+        placeholder="e.g. yourEmail@example.com" required>
+
+        <span class="input-group-text">
+          <span class="tt" data-bs-placement="bottom"
+          title="Enter an email address we can reply to.">
+            <i class="bi bi-question-circle text-muted"></i>
+          </span>
+        </span>
       </div>
-      <div class="row justify-content-center my-5">
-        <div class="col-lg-6">
-          <form>
-            <label for="email" class="form-label">Email address:</label>
-            <div class="input-group mb-4">
-              <span class="input-group-text">
-                <i class="bi bi-envelope-fill text-secondary"></i>
-              </span>
-              <input type="email" id="email" class="form-control" placeholder="e.g. yourEmail@example.com" required />
-              <!-- tooltip -->
-              <span class="input-group-text">
-                <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to.">
-                  <i class="bi bi-question-circle text-muted"></i>
-                </span>
-              </span>
-            </div>
-            <label for="name" class="form-label">Name:</label>
-            <div class="mb-4 input-group">
-              <span class="input-group-text">
-                <i class="bi bi-person-fill text-secondary"></i>
-              </span>
-              <input type="text" id="name" class="form-control" placeholder="e.g. YourName" required/>
-              <!-- tooltip -->
-              <span class="input-group-text">
-                <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
-                  <i class="bi bi-question-circle text-muted"></i>
-                </span>
-              </span>
-            </div>
-            <label for="subject" class="form-label">What is your question about?</label>
-            <div class="mb-4 input-group">
-              <span class="input-group-text">
-                <i class="bi bi-chat-right-dots-fill text-secondary"></i>
-              </span>
-              <select class="form-select" id="subject">
-                <option value="pricing" selected>My skills</option>
-                <option value="content">Projects done</option>
-                <option value="other">Other query</option>
-              </select>
-            </div>
-            <div class="mb-4 mt-5 form-floating">
-              <textarea class="form-control" id="query" style="height: 140px" placeholder="query" required></textarea>
-              <label for="query">Your query...</label>
-            </div>
-            <div class="mb-4 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
-        </div>
+
+
+      <label for="name" class="form-label">Name:</label>
+      <div class="mb-4 input-group">
+        <span class="input-group-text">
+          <i class="bi bi-person-fill text-secondary"></i>
+        </span>
+
+        <input type="text" id="name" class="form-control"
+        placeholder="e.g. YourName" required>
+      </div>
+
+
+      <label for="subject" class="form-label">What is your question about?</label>
+      <div class="mb-4 input-group">
+        <span class="input-group-text">
+          <i class="bi bi-chat-right-dots-fill text-secondary"></i>
+        </span>
+
+        <select class="form-select" id="subject">
+          <option selected>My skills</option>
+          <option>Projects done</option>
+          <option>Other query</option>
+        </select>
+      </div>
+
+      <div class="mb-4 mt-5 form-floating">
+        <textarea class="form-control" id="query"
+        style="height:140px" placeholder="query" required></textarea>
+
+        <label for="query">Your query...</label>
+      </div>
+
+      <div class="mb-4 text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+
       </div>
     </div>
-  </section>
-<!-- Success message -->
-<div id="successMessage" class="alert alert-success mt-3 d-none">
-✔ Your message was successfully submitted!
+  </div>
 </div>
+</form>
+</section>
+  
+<!-- Success message -->
 
 <!-- Back to top button -->
 <a href="#top" id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-4" style="display:none;">
@@ -223,7 +236,7 @@
 <!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Your JS -->
+<!-- JS -->
 <script src="Js/javascript.js"></script>
 
 </body>

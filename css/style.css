@@ -1,6 +1,12 @@
 html{
   scroll-behavior: smooth;
 }
+body{
+  padding-top: 90px;
+}
+.navbar{
+  backdrop-filter: blur(6px);
+}
 
 #backToTop{
   display: none;
@@ -8,7 +14,7 @@ html{
 
 section{
         padding: 60px 0;
-         }
+        }
 
 .carousel-item::before{
   content: "";

@@ -10,46 +10,25 @@ window.addEventListener("scroll", function () {
 });
 
 
-// Bootstrap Validation + Success Message
-(function () {
-  'use strict'
+// Contact Form
+const form = document.getElementById("contactForm");
+const successPopup = document.getElementById("successPopup");
 
-  const forms = document.querySelectorAll('.needs-validation')
-  const successMessage = document.getElementById("successMessage");
+form.addEventListener("submit", function(event){
 
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
+  event.preventDefault();
 
-      form.addEventListener('submit', function (event) {
+  if(form.checkValidity()){
 
-        if (!form.checkValidity()) {
+    successPopup.classList.remove("d-none");
 
-          event.preventDefault()
-          event.stopPropagation()
+    form.reset();
 
-        } else {
+    setTimeout(function(){
+      successPopup.classList.add("d-none");
+    },3000);
 
-          event.preventDefault()
+  }
 
-          // show success message
-          successMessage.classList.remove("d-none")
+});
 
-          // clear form
-          form.reset()
-
-          // remove validation style
-          form.classList.remove('was-validated')
-
-          // hide message after 4 seconds
-          setTimeout(function () {
-            successMessage.classList.add("d-none")
-          }, 4000)
-
-        }
-
-        form.classList.add('was-validated')
-
-      }, false)
-
-    })
-})();
